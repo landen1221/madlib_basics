@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}HOME{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="col-sm-8 text-center">MadLibs</h1><br>
+    
+    <form action="/madlib">
+        {% for word in word_types %}
+            
+            <div class="form-group row">
+                <label for="text1" class="col-sm-2  text-right align-text-bottom"> {{ word }} </label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name= {{word}} placeholder= {{word}}>
+                </div>
+            </div>
+
+
+        {% endfor %}
+
+        
+        <div class="col-sm-8 text-right">
+            <button type="submit" class="btn btn-outline-primary text-right">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
